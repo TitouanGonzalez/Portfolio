@@ -416,6 +416,12 @@ nav ul li a:hover {
 }
 
 
+#contact {
+    margin-top: 100px; /* Ajoute de l'espace entre les projets et le contact */
+    text-align: center;
+}
+
+
 /* Responsive : 2 cartes par ligne sur tablette, 1 sur mobile */
 @media (max-width: 1024px) {
     .projects-container {
