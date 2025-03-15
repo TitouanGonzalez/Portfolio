@@ -208,6 +208,7 @@ nav ul li a:hover {
     margin-top: 100px;
     position: relative;
     width: 100%;
+    margin-bottom: 150px; /* Augmente l'espacement sous Motion Design */
 }
 
 .motion-title {
@@ -324,82 +325,21 @@ nav ul li a:hover {
     color: #fff;
 }
 
-
 #other-projects {
-    scroll-margin-top: 80px; /* Évite que la section soit cachée sous le menu */
-}
-
-.projects-title {
-    text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    margin-top: 100px; /* Augmenté pour plus d'espace */
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
-
-.project-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Centre les cartes */
     gap: 20px;
-}
-
-
-
-.project-card {
-    background: #111;
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-    width: 400px; /* Cartes plus grandes */
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: scale(1.05);
-}
-
-.project-card h3 {
-    font-size: 22px; /* Texte plus grand */
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.project-card img {
-    width: 100%;
-    height: 250px; /* Image plus grande */
-    object-fit: cover;
-    border-radius: 8px;
+    max-width: 1300px;
+    margin: auto;
 }
 
 .project-card {
-    background: #111;
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-    width: 400px; /* Largeur fixe */
-    min-height: 450px; /* 🔥 Ajoute une hauteur minimale */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Équilibre les éléments */
-    transition: transform 0.3s ease;
+    width: calc(25% - 20px); /* 🔥 Force 4 cartes par ligne */
+    min-height: 500px; /* 🔥 Uniformise la hauteur */
 }
 
 
-.figma-link {
-    display: inline-block;
-    font-size: 26px;
-    margin-top: 15px;
-    text-decoration: none;
-    color: #00aaff; /* Assure que toutes les flèches sont en bleu */
-    transition: transform 0.3s ease;
-}
-
-.figma-link:hover {
-    transform: scale(1.2);
-}
 
 /* 🔹 Assure que la flèche de la carte Hyper Space Valley est bien stylée */
 .project-card .pdf-link {
@@ -411,36 +351,22 @@ nav ul li a:hover {
     transition: transform 0.3s ease;
 }
 
-.project-card .pdf-link:hover {
-    transform: scale(1.2);
-}
-
 
 #contact {
-    margin-top: 100px; /* Ajoute de l'espace entre les projets et le contact */
+    margin-top: 50px; /* 🔥 Ajoute plus d’espace entre "Autres projets" et "Contact" */
     text-align: center;
+    width: 100%; /* 🔥 Empêche le contact de s'afficher à côté d'une carte */
 }
 
-
-/* Responsive : 2 cartes par ligne sur tablette, 1 sur mobile */
-@media (max-width: 1024px) {
-    .projects-container {
-        justify-content: center;
-    }
-
+/* 🔥 Ajuste pour les écrans de taille moyenne (tablettes) */
+@media (max-width: 1200px) {
     .project-card {
-        width: 350px; /* Légèrement plus petit sur tablette */
+        width: calc(50% - 20px); /* 🔥 2 cartes par ligne sur tablette */
     }
 }
 
 @media (max-width: 768px) {
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .project-card {
-        width: 90%; /* Pleine largeur sur mobile */
+        width: 100%; /* 🔥 1 carte par ligne sur mobile */
     }
 }
-
