@@ -22,7 +22,8 @@ header {
 
 nav {
     display: flex;
-    justify-content: right; margin-right: 30px;
+    justify-content: flex-end; 
+    margin-right: 80px; /* 🔥 Augmente l'espace à gauche */
     align-items: center;
     flex-grow: 1;
     max-width: 100%;
@@ -35,9 +36,11 @@ nav ul {
     display: flex;
     flex-wrap: nowrap;
     gap: 20px;
-    justify-content: right; margin-right: 30px;
+    justify-content: flex-end;
+    margin-right: 80px; /* 🔥 Augmente pour décaler */
     width: auto;
 }
+
 
 nav ul li {
     margin-left: 10px;
@@ -46,11 +49,12 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    transition: color 0.3s ease-in-out;
-    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px; /* 🔥 Augmenté pour plus de lisibilité */
+    transition: color 0.3s ease;
 }
+
 
 nav ul li a:hover {
     color: #00aaff;
