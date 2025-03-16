@@ -27,7 +27,9 @@
 
 
     <section id="about" class="section">
-        <img src="photodeprofil.jpg" alt="Photo de Titouan Gonzalez">
+        <div class="profil-container">
+            <img src="photodeprofil.jpg" alt="Photo de Titouan Gonzalez">
+        </div>
         <div class="description">
             <h2>À propos de moi</h2>
             <p>Bonjour, moi c'est Titouan Gonzalez, 21 ans, originaire de Bordeaux. Passionné par l'UX/UI, le motion design et la vidéo, j'aime concevoir des expériences visuelles et interactives.</p>
@@ -310,6 +312,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 </script>
+
+<script>
+    const container = document.querySelector('.profil-container');
+    const img = container.querySelector('img');
+
+    container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = -(y - centerY) / 10;
+        const rotateY = (x - centerX) / 10;
+
+        img.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        img.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+</script>
+
 
 
 </body>
