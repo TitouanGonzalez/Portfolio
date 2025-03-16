@@ -21,6 +21,10 @@
         </nav>
     </header>
 
+    <div class="blue-blur"></div>
+    <div class="blue-blur-right"></div>
+
+
     <section id="about" class="section">
         <img src="photodeprofil.jpg" alt="Photo de Titouan Gonzalez">
         <div class="description">
@@ -32,6 +36,9 @@
             
         </div>
     </section>
+
+
+    <div class="blue-blur"></div>
 
     <div class="separator"></div> <!-- Ajout avant la section UX UI -->
 
@@ -197,7 +204,7 @@
         <p>Création d'un jeu sur Unity</p>
         <a href="https://sakuships.itch.io/wallid-20" target="_blank" class="figma-link">➜</a>
     </div>
-
+</div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -225,17 +232,18 @@
     });
 </script>
 
-<div class="separator"></div> <!-- Ajout avant Contact -->
 
 
-    <section id="contact" class="projects-title">
-        <h2>Contact</h2>
-        <p>Vous pouvez me contactez à : <a href="mailto:titouan.gonzalez99@gmail.com">titouan.gonzalez99@gmail.com</a></p>
-    </section>
+<section id="contact">
+    <h2 class="projects-title">Contact</h2>
+    <p>Vous pouvez me contactez à : <a href="mailto:titouan.gonzalez99@gmail.com">titouan.gonzalez99@gmail.com</a></p>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Mon Portfolio. Tous droits réservés.</p>
-    </footer>
+
+<footer> 
+    <p> @ 2025 Mon Portfolio. Tous droits réservés.</p>
+</footer>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -254,6 +262,41 @@
             checkSections();
         });
     </script>
+
+
+<script>
+    let lastScrollTop = 0;
+    window.addEventListener("scroll", function() {
+        const header = document.querySelector('header');
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            header.style.top = "-100px"; // cache la navbar
+            header.classList.remove('active');
+        } else {
+            header.style.top = "0"; // affiche la navbar
+            header.classList.add('active');
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+    </script>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const separators = document.querySelectorAll(".separator");
+
+    function animateSeparators() {
+        separators.forEach(separator => {
+            const rect = separator.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                separator.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", animateSeparators);
+    animateSeparators();
+});
+</script>
 
 
 </body>
