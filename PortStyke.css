@@ -20,6 +20,29 @@ header {
     z-index: 1000;
 }
 
+
+.blue-blur {
+    position: absolute;
+    top: 850px; /* ajuste selon ton design */
+    left: 15%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 100, 255, 0.4) 0%, rgba(0, 100, 255, 0) 0%);
+    filter: blur(100px);
+    z-index: 0; /* Assure-toi que ça passe bien derrière le contenu */
+}
+
+.blue-blur-right {
+    position: absolute;
+    top: 400px; /* 🔵 légèrement plus bas */
+    right: 120px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(0, 100, 255, 0.3) 0%, rgba(0, 100, 255, 0) 70%);
+    filter: blur(100px);
+    z-index: 0;
+}
+
 nav {
     display: flex;
     justify-content: flex-end; 
@@ -77,44 +100,31 @@ nav ul li a:hover {
 }
 
 #about {
-    max-width: 1100px;
-    margin: 100px auto;
-    padding: 50px;
+    max-width: 1500px; /* passe à 1500px pour bien élargir */
+    margin: 140px auto; /* plus d'espace en haut */
+    padding: 80px; /* plus d’air à l’intérieur */
     display: flex;
-    flex-direction: row; /* Photo à gauche, texte à droite */
-    align-items: center; /* Alignement vertical parfait */
+    flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
     text-align: left;
-    gap: 50px;
+    gap: 80px; /* encore plus d'espace entre image et texte */
 }
 
 #about img {
-    width: 300px;
-    height: 300px;
+    width: 360px; /* image encore plus grande */
+    height: 360px;
     object-fit: cover;
     border-radius: 0;
     display: block;
-    flex-shrink: 0; /* Empêche l'image de rétrécir */
+    flex-shrink: 0;
 }
 
 #about .description {
-    max-width: 600px;
-    font-size: 18px;
-    line-height: 1.6;
-    flex-grow: 1; /* Permet au texte de prendre tout l’espace disponible */
-}
-
-/* 📱 Responsive : Passe en colonne SEULEMENT sur petits écrans */
-@media (max-width: 768px) {
-    #about {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #about img {
-        width: 250px;
-        height: 250px;
-    }
+    max-width: 800px; /* zone de texte plus large aussi */
+    font-size: 19px; /* légère augmentation de la taille du texte */
+    line-height: 1.7;
+    flex-grow: 1;
 }
 
 .projects-title {
@@ -127,12 +137,16 @@ nav ul li a:hover {
 
 
 .projects-container {
-    display: flex;
-    flex-wrap: wrap; /* Permet de passer à la ligne si besoin */
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
     gap: 40px;
     margin-top: 50px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+
 
 .project-card {
     background: #111;
@@ -179,27 +193,23 @@ nav ul li a:hover {
     transform: scale(1.2);
 }
 
-/* Responsive : 2 cartes par ligne sur tablette, 1 sur mobile */
-@media (max-width: 1024px) {
-    .projects-container {
-        justify-content: center;
-    }
-
-    .project-card {
-        width: 350px; /* Légèrement plus petit sur tablette */
-    }
+#ux-ui + .projects-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px; /* réduit un peu l'espacement */
+    max-width: 1800px; /* grille plus large */
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-card {
-        width: 90%; /* Pleine largeur sur mobile */
-    }
+#ux-ui + .projects-container .project-card {
+    width: 80%; /* prend toute la colonne */
+    padding: 35px; /* plus de "respiration" dans la carte */
 }
+
+#ux-ui + .projects-container .project-card img {
+    height: 280px; /* agrandir les images */
+}
+
 
 
 #ux-ui {
@@ -329,20 +339,22 @@ nav ul li a:hover {
     color: #fff;
 }
 
+
+#ux-ui + .projects-container {
+    margin-bottom: 100px; /* espace sous UX/UI */
+}
+
 #other-projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centre les cartes */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 1300px;
-    margin: auto;
+    max-width: 1400px;
+    margin: 0 auto 150px auto; /* on ajoute 150px de bas */
 }
 
-.project-card {
-    width: calc(25% - 20px); /* 🔥 Force 4 cartes par ligne */
-    min-height: 300px; /* 🔥 Uniformise la hauteur */
+#other-projects .project-card {
+    width: 80%;
 }
-
 
 
 /* 🔹 Assure que la flèche de la carte Hyper Space Valley est bien stylée */
@@ -356,36 +368,77 @@ nav ul li a:hover {
 }
 
 #contact {
-    width: 100%;
-    margin-top: 50px;
-    clear: both; /* 🔥 Ça force le bloc à passer sous les éléments flottants */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    position: relative; /* Ajouté */
+    z-index: 1; /* Met le contact au-dessus des éléments z-index:0 comme .blue-blur */
+}
+
+
+
+#contact h2, #contact p {
     text-align: center;
 }
 
-#contact h2 {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: none;
-    margin-bottom: 10px;
-}
 
 #contact p {
-    font-size: 16px;
-    font-weight: normal;
+    font-size: 18px;
 }
 
 #contact a {
-    font-size: 16px;
-    font-weight: normal;
+    font-size: 18px;
 }
 
 
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid white;
+    z-index: 1000;
+    transition: top 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+header.active {
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔵 La ligne séparatrice plus large */
+.separator-large {
+    width: 100%;
+    height: 1px;
+    background: white;
+    margin: 60px auto;
+    opacity: 0.5;
+}
+
 .separator {
-    width: 80%;
+    width: 0;
     height: 1px;
     background: white;
     margin: 40px auto;
     opacity: 0.3;
+    transition: width 1.2s ease;
+}
+
+.separator.visible {
+    width: 80%;
+}
+
+
+footer {
+    z-index: 0;
+    position: relative;
 }
 
 
@@ -399,5 +452,54 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .project-card {
         width: 100%; /* 🔥 1 carte par ligne sur mobile */
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive : 2 cartes par ligne sur tablette, 1 sur mobile */
+@media (max-width: 1024px) {
+    .projects-container {
+        justify-content: center;
+    }
+
+    .project-card {
+        width: 350px; /* Légèrement plus petit sur tablette */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%; /* Pleine largeur sur mobile */
+    }
+}
+
+
+/* 📱 Responsive : Passe en colonne SEULEMENT sur petits écrans */
+@media (max-width: 768px) {
+    #about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about img {
+        width: 250px;
+        height: 250px;
     }
 }
