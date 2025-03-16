@@ -13,7 +13,8 @@
     <header>
         <h1>Mon Portfolio Titouan Gonzalez</h1>
         <nav>
-            <ul>
+            <div class="burger" id="burger">&#9776;</div>
+            <ul id="nav-links">
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#ux-ui">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -296,6 +297,17 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", animateSeparators);
     animateSeparators();
 });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const burger = document.getElementById("burger");
+        const navLinks = document.getElementById("nav-links");
+
+        burger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    });
 </script>
 
 
