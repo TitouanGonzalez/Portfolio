@@ -483,6 +483,17 @@ footer {
     margin: 60px auto -20px; /* espace sous la ligne */
 }
 
+#about .profil-container {
+    perspective: 1000px;
+}
+
+#about img {
+    transition: transform 0.2s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+
 
 /* 🔥 Ajuste pour les écrans de taille moyenne (tablettes) */
 @media (max-width: 1200px) {
