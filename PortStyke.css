@@ -43,6 +43,20 @@ header {
     z-index: 0;
 }
 
+
+.blue-blur-left-other {
+    position: absolute;
+    top: 3000px; /* ajuste cette valeur en fonction de ton site */
+    left: -130px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(0, 100, 255, 0.3) 0%, rgba(0, 100, 255, 0) 70%);
+    filter: blur(100px);
+    z-index: 0;
+}
+
+
+
 nav {
     display: flex;
     justify-content: flex-end; 
@@ -355,6 +369,25 @@ nav ul li a:hover {
 #other-projects .project-card {
     width: 80%;
 }
+
+#other-projects .project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* pousse la flèche en bas */
+    height: 100%; /* prend toute la hauteur disponible */
+    align-self: center;
+}
+
+#other-projects .project-card p {
+    flex-grow: 1; /* pousse le texte vers le haut et réserve l'espace pour la flèche */
+}
+
+#other-projects .figma-link,
+#other-projects .pdf-link {
+    margin-top: auto; /* pousse la flèche vers le bas */
+    align-self: center; /* optionnel : aligne la flèche à gauche (ou center si tu préfères) */
+}
+
 
 
 /* 🔹 Assure que la flèche de la carte Hyper Space Valley est bien stylée */
