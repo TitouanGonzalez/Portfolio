@@ -340,7 +340,7 @@ nav ul li a:hover {
 
 .project-card {
     width: calc(25% - 20px); /* 🔥 Force 4 cartes par ligne */
-    min-height: 500px; /* 🔥 Uniformise la hauteur */
+    min-height: 300px; /* 🔥 Uniformise la hauteur */
 }
 
 
@@ -355,12 +355,30 @@ nav ul li a:hover {
     transition: transform 0.3s ease;
 }
 
-
 #contact {
-    margin-top: 50px; /* 🔥 Ajoute plus d’espace entre "Autres projets" et "Contact" */
+    width: 100%;
+    margin-top: 50px;
+    clear: both; /* 🔥 Ça force le bloc à passer sous les éléments flottants */
     text-align: center;
-    width: 100%; /* 🔥 Empêche le contact de s'afficher à côté d'une carte */
 }
+
+#contact h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: none;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#contact a {
+    font-size: 16px;
+    font-weight: normal;
+}
+
 
 /* 🔥 Ajuste pour les écrans de taille moyenne (tablettes) */
 @media (max-width: 1200px) {
