@@ -541,3 +541,36 @@ footer {
         padding-top: 140px;
     }
 }
+
+/* Burger hidden par défaut */
+.burger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Nav classique desktop */
+@media (min-width: 769px) {
+    #nav-links {
+        display: flex;
+    }
+}
+
+/* Mobile : active le burger */
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+}
