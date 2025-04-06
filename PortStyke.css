@@ -618,3 +618,56 @@ footer {
         display: flex;
     }
 }
+
+/* 🔧 RESPONSIVE AMÉLIORATIONS */
+
+/* Ajustement pour toutes les grilles */
+@media (max-width: 1024px) {
+    #ux-ui + .projects-container,
+    #other-projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #ux-ui + .projects-container,
+    #other-projects {
+        grid-template-columns: 1fr;
+    }
+
+    #about {
+        padding: 40px 20px;
+        gap: 40px;
+    }
+
+    #about .description {
+        font-size: 16px;
+    }
+
+    .blue-blur, .blue-blur-right, .blue-blur-left-other {
+        display: none;
+    }
+
+    .motion-item.active {
+        width: 80vw;
+    }
+
+    .motion-item img {
+        width: 100%;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+}
+
+/* Limite la largeur globale sur très grands écrans */
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+}
