@@ -210,7 +210,7 @@ nav ul li a:hover {
 
 #ux-ui + .projects-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px; /* réduit un peu l'espacement */
     max-width: 1800px; /* grille plus large */
     margin: 0 auto;
